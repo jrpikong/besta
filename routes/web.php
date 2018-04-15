@@ -18,3 +18,8 @@ Route::get('/services/{category}','ServicesController@servicesDetail')->name('se
 
 Route::post('/contact', 'ContactController@store')->name('contact');
 
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

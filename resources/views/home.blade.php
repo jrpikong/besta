@@ -26,62 +26,27 @@
             <div class="row pt-4">
                 <div class="col">
                     <h2 class="mb-0 text-color-dark">Services</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet.</p>
+                    <p class="lead">{{Voyager::setting('site.services-description')}}</p>
                 </div>
             </div>
 
             <div class="row mt-4">
-                <div class="col-lg-6">
-                    <div class="feature-box feature-box-style-2 custom-feature-box mb-4 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
-                        <div class="feature-box-icon">
-                            <img src="{{asset('img/demos/construction/icons/ground-construction.png')}}" alt="" class="img-fluid" />
+                @if($services)
+                    @foreach($services as $service)
+                        <div class="col-lg-6">
+                            <div class="feature-box feature-box-style-2 custom-feature-box mb-4 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
+                                <div class="feature-box-icon">
+                                    <img src="{{Voyager::image($service->icon)}}" alt="{{$service->slug}}" class="img-fluid" />
+                                </div>
+                                <div class="feature-box-info ml-3">
+                                    <h4 class="mb-2">{{$service->title}}</h4>
+                                    <p>{{str_limit($service->description,120)}}</p>
+                                    <a class="mt-3" href="{{route('sevices',[$service->slug])}}">Learn More <i class="fa fa-long-arrow-right"></i></a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="feature-box-info ml-3">
-                            <h4 class="mb-2">Pre-Construction</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>
-                            <a class="mt-3" href="demo-construction-services-detail.html">Learn More <i class="fa fa-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="feature-box feature-box-style-2 custom-feature-box mb-4 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0">
-                        <div class="feature-box-icon">
-                            <img src="{{asset('img/demos/construction/icons/construction.png')}}" alt="" class="img-fluid" />
-                        </div>
-                        <div class="feature-box-info ml-3">
-                            <h4 class="mb-2">General Construction</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>
-                            <a class="mt-3" href="demo-construction-services-detail.html">Learn More <i class="fa fa-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mt-3 mb-4">
-                <div class="col-lg-6">
-                    <div class="feature-box feature-box-style-2 custom-feature-box mb-4 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
-                        <div class="feature-box-icon">
-                            <img src="{{asset('img/demos/construction/icons/painting.png')}}" alt="" class="img-fluid" />
-                        </div>
-                        <div class="feature-box-info ml-3">
-                            <h4 class="mb-2">Painting</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing metus elit. Quisque rutrum pellentesque imperdiet.</p>
-                            <a class="mt-3" href="demo-construction-services-detail.html">Learn More <i class="fa fa-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="feature-box feature-box-style-2 custom-feature-box mb-4 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0">
-                        <div class="feature-box-icon">
-                            <img src="{{asset('img/demos/construction/icons/plumbing.png')}}" alt="" class="img-fluid" />
-                        </div>
-                        <div class="feature-box-info ml-3">
-                            <h4 class="mb-2">Plumbing</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing metus elit. Quisque rutrum pellentesque imperdiet.</p>
-                            <a class="mt-3" href="demo-construction-services-detail.html">Learn More <i class="fa fa-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>
@@ -91,59 +56,26 @@
             <div class="row pt-4">
                 <div class="col">
                     <h2 class="mb-0 text-color-dark">Projects</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet.</p>
 
                     <div class="diamonds-wrapper lightbox" data-plugin-options="{'delegate': '.diamond', 'type': 'image', 'gallery': {'enabled': true}}">
                         <ul class="diamonds">
-                            <li>
-                                <a href="{{asset('img/demos/construction/gallery/construction-gallery-1.jpg')}}" class="diamond">
-                                    <div class="content">
-                                        <img src="{{asset('img/demos/construction/gallery/construction-gallery-1.jpg')}}" class="img-fluid" />
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{asset('img/demos/construction/gallery/construction-gallery-2.jpg')}}" class="diamond">
-                                    <div class="content">
-                                        <img src="{{asset('img/demos/construction/gallery/construction-gallery-2.jpg')}}" class="img-fluid" />
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{asset('img/demos/construction/gallery/construction-gallery-3.jpg')}}" class="diamond">
-                                    <div class="content">
-                                        <img src="{{asset('img/demos/construction/gallery/construction-gallery-3.jpg')}}" class="img-fluid" />
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{asset('img/demos/construction/gallery/construction-gallery-4.jpg')}}" class="diamond diamond-sm">
-                                    <div class="content">
-                                        <img src="{{asset('img/demos/construction/gallery/construction-gallery-4.jpg')}}" class="img-fluid" />
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{asset('img/demos/construction/gallery/construction-gallery-5.jpg')}}" class="diamond">
-                                    <div class="content">
-                                        <img src="{{asset('img/demos/construction/gallery/construction-gallery-5.jpg')}}" class="img-fluid" />
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{asset('img/demos/construction/gallery/construction-gallery-6.jpg')}}" class="diamond diamond-sm">
-                                    <div class="content">
-                                        <img src="{{asset('img/demos/construction/gallery/construction-gallery-6.jpg')}}" class="img-fluid" />
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{asset('img/demos/construction/gallery/construction-gallery-7.jpg')}}" class="diamond diamond-sm">
-                                    <div class="content">
-                                        <img src="{{asset('img/demos/construction/gallery/construction-gallery-7.jpg')}}" class="img-fluid" />
-                                    </div>
-                                </a>
-                            </li>
+                            @if($projects)
+                                @foreach($projects as $i => $project)
+                                    @php
+                                        $sm = '';
+                                        if ($i == 3 || $i == 5 || $i == 6){
+                                            $sm = 'diamond-sm';
+                                        }
+                                    @endphp
+                                    <li>
+                                        <a href="{{Voyager::image($project->cover_image)}}" class="diamond {{$sm}}">
+                                            <div class="content">
+                                                <img src="{{Voyager::image($project->cover_image)}}" class="img-fluid" />
+                                            </div>
+                                        </a>
+                                    </li>
+                                @endforeach
+                            @endif
                         </ul>
                     </div>
 
@@ -151,43 +83,37 @@
             </div>
             <div class="row row-diamons-description justify-content-center justify-content-xl-start text-center text-xl-left">
                 <div class="col-md-8 col-lg-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing metus elit. Quisque rutrum pellentesque imperdiet. Lorem ipsum dolor sit amet, consectetur adipiscing metus elit. Quisque rutrum pellentesque imperdiet.</p>
-                    <a class="btn btn-outline btn-primary" href="demo-construction-projects.html">View All Projects</a>
+                    <p class="lead">{{Voyager::setting('site.project-description')}}</p>
+                    <a class="btn btn-outline btn-primary" href="#">View All Projects</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section section-background mb-4" style="background-image: url({{asset('img/demos/construction/testimonials/testimonials-bg.jpg')}}); background-position: 50% 100%; min-height: 540px; background-size: cover;">
+    <section class="section section-background mb-4" style="background-image: url({{Voyager::image(Voyager::setting('site.bg-testimonial'))}}); background-position: 50% 100%; min-height: 540px; background-size: cover;">
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-lg-6">
 
                     <div class="owl-carousel owl-theme nav-bottom rounded-nav mt-4 pt-4 mb-4 pb-4" data-plugin-options="{'items': 1, 'loop': false}">
-                        <div>
-                            <div class="col">
-                                <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-0">
-                                    <blockquote>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce ante tellus, convallis non consectetur sed, pharetra nec ex.</p>
-                                    </blockquote>
-                                    <div class="testimonial-author">
-                                        <p><strong>Ana Smith</strong><span>Porto Magazine</span></p>
+                        @if($testimonials)
+                            @foreach($testimonials as $testimonial)
+                                <div>
+                                    <div class="col">
+                                        <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-0">
+                                            <blockquote>
+                                                <p>{{$testimonial->description}}</p>
+                                            </blockquote>
+                                            <div class="testimonial-author">
+                                                <p><strong>{{$testimonial->testi_name}}</strong><span>{{$testimonial->from}}</span></p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="col">
-                                <div class="testimonial testimonial-style-2 testimonial-with-quotes mb-0">
-                                    <blockquote>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    </blockquote>
-                                    <div class="testimonial-author">
-                                        <p><strong>Jessica Smith</strong><span>Porto Magazine</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            @endforeach
+                        @endif
+
+
                     </div>
 
                 </div>
@@ -234,62 +160,31 @@
             </div>
             <div class="row pt-4">
                 <div class="col">
-                    <h2 class="mb-0 text-color-dark">Blog</h2>
-                    <p class="lead mb-2">Lorem ipsum dolor sit amet.</p>
+                    <h2 class="mb-0 text-color-dark">News</h2>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4">
+                @if($posts)
+                    @foreach($posts as $post)
+                        <div class="col-lg-4">
                     <div class="recent-posts mt-4">
-                        <a href="demo-construction-blog-detail.html">
-                            <img class="img-fluid pb-3" src="img/demos/construction/blog/blog-construction-1.jpg" alt="Blog">
+                        <a href="#">
+                            <img class="img-fluid pb-3" src="{{Voyager::image($post->image)}}" alt="{{$post->title}}">
                         </a>
                         <article class="post">
                             <div class="date">
-                                <span class="day">15</span>
-                                <span class="month">Jan</span>
+                                <span class="day">{{$post->created_at->format('d')}}</span>
+                                <span class="month">{{$post->created_at->format('M')}}</span>
                             </div>
-                            <h4 class="pt-3 pb-0 mb-0"><a class="text-color-dark" href="demo-construction-blog-detail.html">Lorem ipsum dolor sit amet</a></h4>
-                            <p>By admin</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat libero.</p>
-                            <a class="mt-3" href="demo-construction-blog-detail.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+                            <h4 class="pt-3 pb-0 mb-0"><a class="text-color-dark" href="#">{{$post->title}}</a></h4>
+                            <p>By {{$post->authorId->name}}</p>
+                            <p>{!!str_limit($post->body,200)!!}</p>
+                            <a class="mt-3" href="#">Read More <i class="fa fa-long-arrow-right"></i></a>
                         </article>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="recent-posts mt-4">
-                        <a href="demo-construction-blog-detail.html">
-                            <img class="img-fluid pb-3" src="img/demos/construction/blog/blog-construction-2.jpg" alt="Blog">
-                        </a>
-                        <article class="post">
-                            <div class="date">
-                                <span class="day">15</span>
-                                <span class="month">Jan</span>
-                            </div>
-                            <h4 class="pt-3 pb-0 mb-0"><a class="text-color-dark" href="demo-construction-blog-detail.html">Lorem ipsum dolor sit amet</a></h4>
-                            <p>By admin</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat libero.</p>
-                            <a class="mt-3" href="demo-construction-blog-detail.html">Read More <i class="fa fa-long-arrow-right"></i></a>
-                        </article>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="recent-posts mt-4">
-                        <a href="demo-construction-blog-detail.html">
-                            <img class="img-fluid pb-3" src="img/demos/construction/blog/blog-construction-3.jpg" alt="Blog">
-                        </a>
-                        <article class="post">
-                            <div class="date">
-                                <span class="day">15</span>
-                                <span class="month">Jan</span>
-                            </div>
-                            <h4 class="pt-3 pb-0 mb-0"><a class="text-color-dark" href="demo-construction-blog-detail.html">Lorem ipsum dolor sit amet</a></h4>
-                            <p>By admin</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat libero.</p>
-                            <a class="mt-3" href="demo-construction-blog-detail.html">Read More <i class="fa fa-long-arrow-right"></i></a>
-                        </article>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>
