@@ -20,6 +20,7 @@ Route::get('/projects/{id}','ProjectController@detailProject')->name('project-de
 Route::get('/blog','BlogController@listBlog')->name('blog');
 Route::get('/blog/{slug}','BlogController@detailBlog')->name('blog-detail');
 
+Route::get('/contact', 'ContactController@index')->name('contact');
 Route::post('/contact', 'ContactController@store')->name('contact');
 
 

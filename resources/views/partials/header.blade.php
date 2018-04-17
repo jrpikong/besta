@@ -5,9 +5,9 @@
                 <div class="header-column">
                     <div class="header-row">
                         <div class="header-logo">
-                            <img class="logo-default" alt="Porto" width="324" height="212" src="{{asset('img/demos/construction/logo-construction.png')}}">
+                            <img class="logo-default" alt="Porto" width="324" height="212" src="{{Voyager::image(setting('site.logo'))}}">
                             <a href="{{route('home')}}">
-                                <img class="logo-small" alt="Porto" width="131" height="48" src="{{asset('img/demos/construction/logo-construction-small.png')}}">
+                                <img class="logo-small" alt="Porto" width="131" height="48" src="{{Voyager::image(setting('site.logo-small-header'))}}">
                             </a>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="demo-construction-contact.html">
+                                            <a class="nav-link" href="{{route('contact')}}">
                                                 Contact
                                             </a>
                                         </li>

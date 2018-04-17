@@ -12,11 +12,15 @@
     <h4 class="pt-4 mb-3 text-color-dark">Contact Us</h4>
     <p>Contact us or give us a call to discover how we can help.</p>
 
-    <form id="contactForm" action="{{route('contact')}}" method="POST" class="mb-4">
+    <form action="{{route('contact')}}" method="POST" class="mb-4">
         {{ csrf_field() }}
+        @if(Session::has('success'))
+            <p class="alert alert-success">{{ Session::get('success') }}</p>
+        @endif
         <div class="form-row">
             <div class="form-group col">
                 <label>Your name *</label>
+                <input type="hidden" name="url" value="service-page">
                 <input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" id="name" required>
             </div>
         </div>

@@ -15,8 +15,8 @@
                 <img src="{{asset('img/dotted-line-angle.png')}}" class="img-fluid" />
             </div>
             <div class="col-lg-6">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing metus elit. Quisque rutrum pellentesque imperdiet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>
-                <a class="mt-3" href="demo-construction-company.html">Learn More <i class="fa fa-long-arrow-right"></i></a>
+                <p>{{str_limit(Voyager::setting('site.who-we-are'),250)}}</p>
+                <a class="mt-3" href="{{route('company')}}">Learn More <i class="fa fa-long-arrow-right"></i></a>
             </div>
         </div>
     </div>
@@ -126,30 +126,13 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="owl-carousel owl-theme stage-margin rounded-nav" data-plugin-options="{'margin': 10, 'loop': false, 'nav': true, 'dots': false, 'stagePadding': 40, 'items': 6, 'autoplay': true, 'autoplayTimeout': 3000}">
-                        <div>
-                            <img class="img-fluid" src="img/logos/logo-1.png" alt="">
-                        </div>
-                        <div>
-                            <img class="img-fluid" src="img/logos/logo-2.png" alt="">
-                        </div>
-                        <div>
-                            <img class="img-fluid" src="img/logos/logo-3.png" alt="">
-                        </div>
-                        <div>
-                            <img class="img-fluid" src="img/logos/logo-4.png" alt="">
-                        </div>
-                        <div>
-                            <img class="img-fluid" src="img/logos/logo-5.png" alt="">
-                        </div>
-                        <div>
-                            <img class="img-fluid" src="img/logos/logo-6.png" alt="">
-                        </div>
-                        <div>
-                            <img class="img-fluid" src="img/logos/logo-4.png" alt="">
-                        </div>
-                        <div>
-                            <img class="img-fluid" src="img/logos/logo-2.png" alt="">
-                        </div>
+                        @if(!$partners->isEmpty())
+                            @foreach($partners as $partner)
+                                <div>
+                                    <img class="img-fluid" src="{{Voyager::image($partner->icon)}}" alt="{{$partner->name}}">
+                                </div>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>

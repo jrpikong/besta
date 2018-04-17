@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Partner;
 use App\Project;
 use App\Service;
 use App\Slider;
@@ -18,7 +19,8 @@ class HomeController extends Controller
         $projects = $this->projects();
         $testimonials = $this->testimonials();
         $posts = $this->posts();
-        return view('home',compact('sliders','services','projects','testimonials','posts'));
+        $partners = Partner::all();
+        return view('home',compact('sliders','services','partners','projects','testimonials','posts'));
     }
 
 
