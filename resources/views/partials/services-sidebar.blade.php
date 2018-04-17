@@ -2,10 +2,11 @@
 
     <ul class="nav nav-list flex-column mb-4 show-bg-active">
         <li class="nav-item"><a class="nav-link {{ (Request::is('services') ? 'active' : '') }}" href="{{route('overview')}}">Overview</a></li>
-        <li class="nav-item"><a class="nav-link {{ (Request::is('services/pre-construction') ? 'active' : '') }}" href="{{route('sevices',['pre-construction'])}}">Pre-Construction</a></li>
-        <li class="nav-item"><a class="nav-link {{ (Request::is('services/general-construction') ? 'active' : '') }}" href="{{route('sevices',['general-construction'])}}">General Construction</a></li>
-        <li class="nav-item"><a class="nav-link {{ (Request::is('services/plumbing') ? 'active' : '') }}" href="{{route('sevices',['plumbing'])}}">Plumbing</a></li>
-        <li class="nav-item"><a class="nav-link {{ (Request::is('services/painting') ? 'active' : '') }}" href="{{route('sevices',['painting'])}}">Painting</a></li>
+        @if($service_title)
+            @foreach($service_title as $item)
+                <li class="nav-item"><a class="nav-link {{ (Request::is('services/'.$item->slug) ? 'active' : '') }}" href="{{route('sevices',[$item->slug])}}">{{$item->title}}</a></li>
+            @endforeach
+        @endif
     </ul>
 
     <h4 class="pt-4 mb-3 text-color-dark">Contact Us</h4>

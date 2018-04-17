@@ -41,12 +41,12 @@
                                             </ul>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="demo-construction-projects.html">
+                                            <a class="nav-link" href="{{route('projects')}}">
                                                 Projects
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="demo-construction-blog.html">
+                                            <a class="nav-link" href="{{route('blog')}}">
                                                 Blog
                                             </a>
                                         </li>

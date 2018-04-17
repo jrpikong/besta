@@ -22,7 +22,7 @@
                         <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#who-we-are">Who We Are</a></li>
                         <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#history">History</a></li>
                         <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#mission-vision">Mission &amp; Vision</a></li>
-                        <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#partners">Partners</a></li>
+                        {{--<li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#partners">Partners</a></li>--}}
                     </ul>
 
                 </aside>
@@ -33,10 +33,11 @@
                     <div class="nivo-slider mt-3 pb-4">
                         <div class="slider-wrapper theme-default">
                             <div id="nivoSlider" class="nivoSlider mt-0 mb-4">
-                                <img src="img/demos/construction/slides/slide-construction-small-1.jpg" data-thumb="img/demos/construction/slides/slide-construction-small-1.jpg" alt="" />
-                                <img src="img/demos/construction/slides/slide-construction-small-2.jpg" data-thumb="img/demos/construction/slides/slide-construction-small-2.jpg" alt="" />
-                                <img src="img/demos/construction/slides/slide-construction-small-3.jpg" data-thumb="img/demos/construction/slides/slide-construction-small-3.jpg" alt="" />
-                                <img src="img/demos/construction/slides/slide-construction-small-4.jpg" data-thumb="img/demos/construction/slides/slide-construction-small-4.jpg" alt="" />
+                                @if($pages)
+                                    @foreach($pages as $page)
+                                        <img src="{{Voyager::image($page->image)}}" data-thumb="{{Voyager::image($page->image)}}" alt="" />
+                                    @endforeach
+                                @endif
                             </div>
                             <div id="htmlcaption" class="nivo-html-caption"></div>
                         </div>

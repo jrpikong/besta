@@ -84,7 +84,7 @@
             <div class="row row-diamons-description justify-content-center justify-content-xl-start text-center text-xl-left">
                 <div class="col-md-8 col-lg-6">
                     <p class="lead">{{Voyager::setting('site.project-description')}}</p>
-                    <a class="btn btn-outline btn-primary" href="#">View All Projects</a>
+                    <a class="btn btn-outline btn-primary" href="{{route('projects')}}">View All Projects</a>
                 </div>
             </div>
         </div>
@@ -168,18 +168,18 @@
                     @foreach($posts as $post)
                         <div class="col-lg-4">
                     <div class="recent-posts mt-4">
-                        <a href="#">
-                            <img class="img-fluid pb-3" src="{{Voyager::image($post->image)}}" alt="{{$post->title}}">
+                        <a href="{{route('blog-detail',[$post->slug])}}">
+                            <img class="img-fluid pb-3 img-blog" src="{{Voyager::image($post->image)}}" alt="{{$post->title}}">
                         </a>
                         <article class="post">
                             <div class="date">
                                 <span class="day">{{$post->created_at->format('d')}}</span>
                                 <span class="month">{{$post->created_at->format('M')}}</span>
                             </div>
-                            <h4 class="pt-3 pb-0 mb-0"><a class="text-color-dark" href="#">{{$post->title}}</a></h4>
+                            <h4 class="pt-3 pb-0 mb-0"><a class="text-color-dark" href="{{route('blog-detail',[$post->slug])}}">{{$post->title}}</a></h4>
                             <p>By {{$post->authorId->name}}</p>
                             <p>{!!str_limit($post->body,200)!!}</p>
-                            <a class="mt-3" href="#">Read More <i class="fa fa-long-arrow-right"></i></a>
+                            <a class="mt-3" href="{{route('blog-detail',[$post->slug])}}">Read More <i class="fa fa-long-arrow-right"></i></a>
                         </article>
                     </div>
                 </div>
