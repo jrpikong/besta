@@ -2,20 +2,25 @@
 
     <ul class="nav nav-list flex-column mb-4 show-bg-active">
         <li class="nav-item"><a class="nav-link {{ (Request::is('services') ? 'active' : '') }}" href="{{route('overview')}}">Overview</a></li>
-        <li class="nav-item"><a class="nav-link {{ (Request::is('services/pre-construction') ? 'active' : '') }}" href="{{route('sevices',['pre-construction'])}}">Pre-Construction</a></li>
-        <li class="nav-item"><a class="nav-link {{ (Request::is('services/general-construction') ? 'active' : '') }}" href="{{route('sevices',['general-construction'])}}">General Construction</a></li>
-        <li class="nav-item"><a class="nav-link {{ (Request::is('services/plumbing') ? 'active' : '') }}" href="{{route('sevices',['plumbing'])}}">Plumbing</a></li>
-        <li class="nav-item"><a class="nav-link {{ (Request::is('services/painting') ? 'active' : '') }}" href="{{route('sevices',['painting'])}}">Painting</a></li>
+        @if($service_title)
+            @foreach($service_title as $item)
+                <li class="nav-item"><a class="nav-link {{ (Request::is('services/'.$item->slug) ? 'active' : '') }}" href="{{route('sevices',[$item->slug])}}">{{$item->title}}</a></li>
+            @endforeach
+        @endif
     </ul>
 
     <h4 class="pt-4 mb-3 text-color-dark">Contact Us</h4>
     <p>Contact us or give us a call to discover how we can help.</p>
 
-    <form id="contactForm" action="{{route('contact')}}" method="POST" class="mb-4">
+    <form action="{{route('contact')}}" method="POST" class="mb-4">
         {{ csrf_field() }}
+        @if(Session::has('success'))
+            <p class="alert alert-success">{{ Session::get('success') }}</p>
+        @endif
         <div class="form-row">
             <div class="form-group col">
                 <label>Your name *</label>
+                <input type="hidden" name="url" value="service-page">
                 <input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" id="name" required>
             </div>
         </div>

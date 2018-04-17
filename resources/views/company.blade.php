@@ -22,7 +22,9 @@
                         <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#who-we-are">Who We Are</a></li>
                         <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#history">History</a></li>
                         <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#mission-vision">Mission &amp; Vision</a></li>
-                        <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#partners">Partners</a></li>
+                        @if(!$partners->isEmpty())
+                            <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#partners">Partners</a></li>
+                        @endif
                     </ul>
 
                 </aside>
@@ -33,19 +35,19 @@
                     <div class="nivo-slider mt-3 pb-4">
                         <div class="slider-wrapper theme-default">
                             <div id="nivoSlider" class="nivoSlider mt-0 mb-4">
-                                <img src="img/demos/construction/slides/slide-construction-small-1.jpg" data-thumb="img/demos/construction/slides/slide-construction-small-1.jpg" alt="" />
-                                <img src="img/demos/construction/slides/slide-construction-small-2.jpg" data-thumb="img/demos/construction/slides/slide-construction-small-2.jpg" alt="" />
-                                <img src="img/demos/construction/slides/slide-construction-small-3.jpg" data-thumb="img/demos/construction/slides/slide-construction-small-3.jpg" alt="" />
-                                <img src="img/demos/construction/slides/slide-construction-small-4.jpg" data-thumb="img/demos/construction/slides/slide-construction-small-4.jpg" alt="" />
+                                @if($galery)
+                                    @foreach(json_decode($galery->images) as $item)
+                                        <img src="{{Voyager::image($item)}}" data-thumb="{{Voyager::image($item)}}" alt="" />
+                                    @endforeach
+                                @endif
                             </div>
                             <div id="htmlcaption" class="nivo-html-caption"></div>
                         </div>
                     </div>
 
                     <h2 class="mb-0 text-color-dark">Who We Are</h2>
-                    <p class="lead mb-4 mt-4">Founded in 2001 by John Doe, gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat.</p>
+                    <p class="lead mb-4 mt-4">{{Voyager::setting('site.who-we-are')}}</p>
 
-                    <p>Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat.</p>
                 </section>
 
                 <hr class="solid tall">
@@ -54,20 +56,21 @@
                     <h2 class="mb-0 text-color-dark">History</h2>
 
                     <div class="row">
-                        <div class="col-lg-7">
-                            <img class="float-left img-fluid mr-4 mb-3 mt-4 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0" width="200" src="img/office/office-1.jpg" alt="">
-                            <p class="mt-4">Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. </p>
-                            <p class="mt-4">Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. </p>
-                        </div>
-                        <div class="col-lg-4">
-                            <ul class="list list-unstyled list-primary list-borders">
-                                <li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0"><strong class="text-color-primary text-4">2017 - </strong> Moves its headquarters to a new building</li>
-                                <li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="100"><strong class="text-color-primary text-4">2014 - </strong> Porto creates its new brand</li>
-                                <li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="200"><strong class="text-color-primary text-4">2006 - </strong> Porto opens it doors in London</li>
-                                <li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300"><strong class="text-color-primary text-4">2003 - </strong> Inauguration of the new office</li>
-                                <li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="400"><strong class="text-color-primary text-4">2001 - </strong> Porto goes into business</li>
-                            </ul>
-                        </div>
+                        <p class="mt-4"> {{Voyager::setting('site.history')}}</p>
+                        {{--<div class="col-lg-7">--}}
+                            {{--<img class="float-left img-fluid mr-4 mb-3 mt-4 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0" width="200" src="img/office/office-1.jpg" alt="">--}}
+                            {{--<p class="mt-4">Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. </p>--}}
+                            {{--<p class="mt-4">Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. </p>--}}
+                        {{--</div>--}}
+                        {{--<div class="col-lg-4">--}}
+                            {{--<ul class="list list-unstyled list-primary list-borders">--}}
+                                {{--<li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0"><strong class="text-color-primary text-4">2017 - </strong> Moves its headquarters to a new building</li>--}}
+                                {{--<li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="100"><strong class="text-color-primary text-4">2014 - </strong> Porto creates its new brand</li>--}}
+                                {{--<li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="200"><strong class="text-color-primary text-4">2006 - </strong> Porto opens it doors in London</li>--}}
+                                {{--<li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300"><strong class="text-color-primary text-4">2003 - </strong> Inauguration of the new office</li>--}}
+                                {{--<li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="400"><strong class="text-color-primary text-4">2001 - </strong> Porto goes into business</li>--}}
+                            {{--</ul>--}}
+                        {{--</div>--}}
                     </div>
                 </section>
 
@@ -87,7 +90,7 @@
 											</span>
                                 <div class="feature-box-info">
                                     <h2 class="mb-3 text-color-dark">Mission</h2>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing metus elit. Quisque rutrum pellentesque imperdiet.</p>
+                                    <p class="mb-4">{{Voyager::setting('site.mission')}}</p>
                                 </div>
                             </div>
                         </div>
@@ -102,7 +105,7 @@
 											</span>
                                 <div class="feature-box-info">
                                     <h2 class="mb-3 text-color-dark">Vision</h2>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla nisi elit consequat.</p>
+                                    <p class="mb-4">{{Voyager::setting('site.vision')}}</p>
                                 </div>
                             </div>
                         </div>
@@ -110,38 +113,24 @@
 
                 </section>
 
-                <hr class="solid tall">
+                @if(!$partners->isEmpty())
+                    <hr class="solid tall">
+                    <section id="partners" class="mb-4">
+                        <h2 class="mb-0 text-color-dark">Partners</h2>
 
-                <section id="partners" class="mb-4">
-                    <h2 class="mb-0 text-color-dark">Partners</h2>
-
-                    <div class="row mt-4">
-                        <div class="content-grid content-grid-dashed col mt-4 mb-4">
-                            <div class="row content-grid-row">
-                                <div class="content-grid-item col-sm-4 text-center">
-                                    <img class="img-fluid" src="img/logos/logo-1.png" alt="">
-                                </div>
-                                <div class="content-grid-item col-sm-4 text-center">
-                                    <img class="img-fluid" src="img/logos/logo-2.png" alt="">
-                                </div>
-                                <div class="content-grid-item col-sm-4 text-center">
-                                    <img class="img-fluid" src="img/logos/logo-3.png" alt="">
-                                </div>
-                            </div>
-                            <div class="row content-grid-row">
-                                <div class="content-grid-item col-sm-4 text-center">
-                                    <img class="img-fluid" src="img/logos/logo-4.png" alt="">
-                                </div>
-                                <div class="content-grid-item col-sm-4 text-center">
-                                    <img class="img-fluid" src="img/logos/logo-4.png" alt="">
-                                </div>
-                                <div class="content-grid-item col-sm-4 text-center">
-                                    <img class="img-fluid" src="img/logos/logo-6.png" alt="">
+                        <div class="row mt-4">
+                            <div class="content-grid content-grid-dashed col mt-4 mb-4">
+                                <div class="row content-grid-row">
+                                    @foreach($partners as $patner)
+                                        <div class="content-grid-item col-sm-4 text-center">
+                                            <img class="img-fluid" src="{{Voyager::image($patner->icon)}}" alt="{{$patner->name}}">
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                @endif
 
             </div>
 

@@ -1,1 +1,13 @@
 /* Add here all your CSS customizations */
+
+
+.img-blog {
+    height: 255px;
+    width: 100%;
+    object-fit: cover;
+}
+.image-projects {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+}

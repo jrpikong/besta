@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Galery;
+use App\Partner;
 use Illuminate\Http\Request;
+use TCG\Voyager\Models\Page;
 
 class CompanyController extends Controller
 {
     public function index ()
     {
-        return view('company');
+        $galery = Galery::first();
+        $partners = Partner::all();
+        return view('company',compact('galery','partners'));
     }
 }
