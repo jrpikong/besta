@@ -97,8 +97,8 @@
 
     // Map Markers
     var mapMarkers = [{
-        address: "New York, NY 10017",
-        html: "<strong>Besta Corporate </strong><br>Jakarta Barat, 11520",
+        address: "Ruko Green Garden Blok A 14 No.44 Jl. Panjang Kedoya, Jakarta Barat 11520",
+        html: "<strong>PT. Besta Rekanda </strong><br>Jakarta Barat, 11520",
         icon: {
             image: "img/pin.png",
             iconsize: [26, 46],
@@ -108,8 +108,8 @@
     }];
 
     // Map Initial Location
-    var initLatitude = 6.16547;//-6.1632981;
-    var initLongitude = 106.76274;//106.7614639;
+    var initLatitude = -6.164843;
+    var initLongitude = 106.762741;//106.7614639;
 
     // Map Extended Settings
     var mapSettings = {
