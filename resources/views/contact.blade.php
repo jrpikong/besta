@@ -108,7 +108,7 @@
     }];
 
     // Map Initial Location
-    var initLatitude = -6.164611;
+    var initLatitude = -6.164625;
     var initLongitude = 106.762660;
 
     // Map Extended Settings
