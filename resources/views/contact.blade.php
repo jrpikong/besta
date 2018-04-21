@@ -97,7 +97,7 @@
 
     // Map Markers
     var mapMarkers = [{
-        address: "Ruko Green Garden Blok A 14 No.44 Jl. Panjang Kedoya, Jakarta Barat 11520",
+        address: "Jl Panjang, Rukan Green Garden A14 / 44, Kedoya Utara, Kebon Jeruk, RT.4/RW.3, RT.1/RW.3, Kedoya Utara, Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11520",
         html: "<strong>PT. Besta Rekanda </strong><br>Jakarta Barat, 11520",
         icon: {
             image: "img/pin.png",
