@@ -59,12 +59,12 @@
                                 </nav>
                             </div>
                             <ul class="header-social-icons social-icons d-none d-lg-block">
-                                @if(Voyager::setting('facebook'))
-                                    <li class="social-icons-facebook"><a href="http://www.facebook.com/{{Voyager::setting('facebook')}}" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                @if(Voyager::setting('site.facebook'))
+                                    <li class="social-icons-facebook"><a href="http://www.facebook.com/{{Voyager::setting('site.facebook')}}" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
                                 @endif
 
-                                @if(Voyager::setting('twitter'))
-                                    <li class="social-icons-twitter"><a href="http://www.twitter.com/{{Voyager::setting('twitter')}}" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                @if(Voyager::setting('site.twitter'))
+                                    <li class="social-icons-twitter"><a href="http://www.twitter.com/{{Voyager::setting('site.twitter')}}" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
                                 @endif
                             </ul>
                             <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
