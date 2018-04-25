@@ -34,10 +34,11 @@
                                             </a>
                                             <ul class="dropdown-menu">
                                                 <li><a class="dropdown-item {{ (Request::is('services') ? 'active' : '') }}" href="{{route('overview')}}">Overview</a></li>
-                                                <li><a class="dropdown-item {{ (Request::is('services/pre-construction') ? 'active' : '') }}" href="{{route('sevices',['pre-construction'])}}">Pre-Construction</a></li>
-                                                <li><a class="dropdown-item {{ (Request::is('services/general-construction') ? 'active' : '') }}" href="{{route('sevices',['general-construction'])}}">General Construction</a></li>
-                                                <li><a class="dropdown-item {{ (Request::is('services/plumbing') ? 'active' : '') }}" href="{{route('sevices',['plumbing'])}}">Plumbing</a></li>
-                                                <li><a class="dropdown-item {{ (Request::is('services/painting') ? 'active' : '') }}" href="{{route('sevices',['painting'])}}">Painting</a></li>
+                                                @if(!$services->isEmpty())
+                                                    @foreach($services as $service)
+                                                        <li class="nav-item"><a class="nav-link {{ (Request::is('services/'.$service->slug) ? 'active' : '') }}" href="{{route('sevices',[$service->slug])}}">{{$service->title}}</a></li>
+                                                    @endforeach
+                                                @endif
                                             </ul>
                                         </li>
                                         <li>

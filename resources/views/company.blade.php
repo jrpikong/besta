@@ -57,20 +57,6 @@
 
                     <div class="row">
                         <p class="mt-4"> {{Voyager::setting('site.history')}}</p>
-                        {{--<div class="col-lg-7">--}}
-                            {{--<img class="float-left img-fluid mr-4 mb-3 mt-4 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0" width="200" src="img/office/office-1.jpg" alt="">--}}
-                            {{--<p class="mt-4">Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. </p>--}}
-                            {{--<p class="mt-4">Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. </p>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-lg-4">--}}
-                            {{--<ul class="list list-unstyled list-primary list-borders">--}}
-                                {{--<li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0"><strong class="text-color-primary text-4">2017 - </strong> Moves its headquarters to a new building</li>--}}
-                                {{--<li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="100"><strong class="text-color-primary text-4">2014 - </strong> Porto creates its new brand</li>--}}
-                                {{--<li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="200"><strong class="text-color-primary text-4">2006 - </strong> Porto opens it doors in London</li>--}}
-                                {{--<li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300"><strong class="text-color-primary text-4">2003 - </strong> Inauguration of the new office</li>--}}
-                                {{--<li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="400"><strong class="text-color-primary text-4">2001 - </strong> Porto goes into business</li>--}}
-                            {{--</ul>--}}
-                        {{--</div>--}}
                     </div>
                 </section>
 

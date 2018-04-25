@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Partner;
 use App\Project;
+use App\Reason;
 use App\Service;
 use App\Slider;
 use App\Testimonial;
@@ -20,7 +21,8 @@ class HomeController extends Controller
         $testimonials = $this->testimonials();
         $posts = $this->posts();
         $partners = Partner::all();
-        return view('home',compact('sliders','services','partners','projects','testimonials','posts'));
+        $reason = $this->reason();
+        return view('home',compact('sliders','services','partners','projects','testimonials','posts','reason'));
     }
 
 
@@ -52,5 +54,11 @@ class HomeController extends Controller
     {
         $posts = Post::with('authorId')->where('status', 1)->limit(3)->get();
         return $posts;
+    }
+
+    private function reason()
+    {
+        $reason = Reason::all();
+        return $reason;
     }
 }

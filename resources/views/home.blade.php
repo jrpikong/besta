@@ -9,7 +9,6 @@
         <div class="row mt-4 mt-lg-5 mb-4 py-4">
             <div class="col-lg-4">
                 <h2 class="mb-0 text-color-dark">Who We Are</h2>
-                <p class="lead">Lorem ipsum dolor sit amet.</p>
             </div>
             <div class="col-lg-2 text-center d-none d-lg-block">
                 <img src="{{asset('img/dotted-line-angle.png')}}" class="img-fluid" />
@@ -120,6 +119,33 @@
             </div>
         </div>
     </section>
+    @if(!$reason->isEmpty())
+    <section class="section section-tertiary section-no-border section-custom-construction">
+        <div class="container">
+            <div class="row pt-4">
+                <div class="col">
+                    <h2 class="mb-0 text-color-dark">4 Reason choosing Us</h2>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                @foreach($reason as $item)
+                    <div class="col-lg-6">
+                        <div class="feature-box feature-box-style-2 custom-feature-box mb-4 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
+                            <div class="feature-box-icon">
+                                <img src="{{Voyager::image($item->icon)}}" alt="{{$item->title}}" class="img-fluid" />
+                            </div>
+                            <div class="feature-box-info ml-3">
+                                <h4 class="mb-2">{{$item->title}}</h4>
+                                <p>{{str_limit($item->description,150)}}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    @endif
 
     <section class="pt-3 section-custom-construction-2">
         <div class="container">
