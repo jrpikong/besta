@@ -22,13 +22,12 @@
 
                 <h2 class="mb-2">{{$service->title}}</h2>
 
-                <img class="img-fluid float-right ml-5 mb-4 mt-4" src="{{Voyager::image($service->icon)}}" alt="{{$service->title}}" />
+                {{--<img class="img-fluid float-right ml-5 mb-4 mt-4" src="{{Voyager::image($service->icon)}}" alt="{{$service->title}}" />--}}
 
-                <p>{!! $service->description !!}</p>
 
                 <div class="row">
                     <div class="col-lg-5">
-                        <p class="pb-4">Lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat. Lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare.</p>
+                        <p class="pb-4">{!! $service->description !!}</p>
                     </div>
                     <div class="col-lg-7">
                         <div class="nivo-slider pb-4 mb-4">

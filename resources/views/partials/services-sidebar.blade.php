@@ -4,7 +4,7 @@
         <li class="nav-item"><a class="nav-link {{ (Request::is('services') ? 'active' : '') }}" href="{{route('overview')}}">Overview</a></li>
         @if($service_title)
             @foreach($service_title as $item)
-                <li class="nav-item"><a class="nav-link {{ (Request::is('services/'.$item->slug) ? 'active' : '') }}" href="{{route('sevices',[$item->slug])}}">{{$item->title}}</a></li>
+                <li class="nav-item"><a class="nav-link {{ (Request::is('services/'.$item->slug) ? 'active' : '') }}" href="{{route('services',[$item->slug])}}">{{$item->title}}</a></li>
             @endforeach
         @endif
     </ul>

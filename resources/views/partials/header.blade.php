@@ -5,9 +5,9 @@
                 <div class="header-column">
                     <div class="header-row">
                         <div class="header-logo">
-                            <img class="logo-default" alt="Porto" width="324" height="212" src="{{Voyager::image(setting('site.logo'))}}">
+                            <img class="logo-default" alt="Porto" width="131" height="96" src="{{Voyager::image(setting('site.logo'))}}">
                             <a href="{{route('home')}}">
-                                <img class="logo-small" alt="Porto" width="131" height="48" src="{{Voyager::image(setting('site.logo-small-header'))}}">
+                                <img class="logo-small" alt="Porto" width="131" height="96" src="{{Voyager::image(setting('site.logo'))}}">
                             </a>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                                                 <li><a class="dropdown-item {{ (Request::is('services') ? 'active' : '') }}" href="{{route('overview')}}">Overview</a></li>
                                                 @if(!$services->isEmpty())
                                                     @foreach($services as $service)
-                                                        <li class="nav-item"><a class="nav-link {{ (Request::is('services/'.$service->slug) ? 'active' : '') }}" href="{{route('sevices',[$service->slug])}}">{{$service->title}}</a></li>
+                                                        <li class="nav-item"><a class="nav-link {{ (Request::is('services/'.$service->slug) ? 'active' : '') }}" href="{{route('services',[$service->slug])}}">{{$service->title}}</a></li>
                                                     @endforeach
                                                 @endif
                                             </ul>

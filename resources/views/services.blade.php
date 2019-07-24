@@ -29,7 +29,7 @@
                                     <div class="feature-box-info ml-2">
                                         <h4 class="mb-2">{{$item->title}}</h4>
                                         <p>{!! str_limit($item->description,280) !!}</p>
-                                        <a class="mt-3" href="{{route('sevices',[$item->slug])}}">Learn More <i class="fa fa-long-arrow-right"></i></a>
+                                        <a class="mt-3" href="{{route('services',[$item->slug])}}">Learn More <i class="fa fa-long-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>

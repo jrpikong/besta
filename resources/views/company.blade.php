@@ -46,7 +46,7 @@
                     </div>
 
                     <h2 class="mb-0 text-color-dark">Who We Are</h2>
-                    <p class="lead mb-4 mt-4">{{Voyager::setting('site.who-we-are')}}</p>
+                    <p class="lead mb-4 mt-4">{!! Voyager::setting('site.who-we-are') !!}</p>
 
                 </section>
 
@@ -66,32 +66,33 @@
 
                     <div class="row mt-4">
                         <div class="col-sm-6 text-center">
-                            <div class="feature-box feature-box-style-4 justify-content-center mt-4 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0">
-											<span class="featured-boxes featured-boxes-style-4 p-0 m-0">
-												<span class="featured-box featured-box-primary featured-box-effect-6 p-0 m-0">
-													<span class="box-content p-0 m-0">
-														<i class="icon-featured icon-target icons"></i>
-													</span>
-												</span>
-											</span>
-                                <div class="feature-box-info">
-                                    <h2 class="mb-3 text-color-dark">Mission</h2>
-                                    <p class="mb-4">{{Voyager::setting('site.mission')}}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 text-center">
                             <div class="feature-box feature-box-style-4 justify-content-center mt-4 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
-											<span class="featured-boxes featured-boxes-style-4 p-0 m-0">
-												<span class="featured-box featured-box-primary featured-box-effect-6 p-0 m-0">
-													<span class="box-content p-0 m-0">
-														<i class="icon-featured icon-eye icons"></i>
-													</span>
-												</span>
-											</span>
+                                <span class="featured-boxes featured-boxes-style-4 p-0 m-0">
+                                    <span class="featured-box featured-box-primary featured-box-effect-6 p-0 m-0">
+                                        <span class="box-content p-0 m-0">
+                                            <i class="icon-featured icon-eye icons"></i>
+                                        </span>
+                                    </span>
+                                </span>
                                 <div class="feature-box-info">
                                     <h2 class="mb-3 text-color-dark">Vision</h2>
                                     <p class="mb-4">{{Voyager::setting('site.vision')}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 text-center">
+                            <div class="feature-box feature-box-style-4 justify-content-center mt-4 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0">
+                                <span class="featured-boxes featured-boxes-style-4 p-0 m-0">
+                                    <span class="featured-box featured-box-primary featured-box-effect-6 p-0 m-0">
+                                        <span class="box-content p-0 m-0">
+                                            <i class="icon-featured icon-target icons"></i>
+                                        </span>
+                                    </span>
+                                </span>
+                                <div class="feature-box-info">
+                                    <h2 class="mb-3 text-color-dark">Mission</h2>
+                                    <p class="mb-4">{{Voyager::setting('site.mission')}}</p>
                                 </div>
                             </div>
                         </div>

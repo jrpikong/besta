@@ -11,3 +11,17 @@
     width: 100%;
     object-fit: cover;
 }
+.tp-caption{
+    background-color: #e04622;
+    padding: 10px;
+}
+#header.header-narrow .header-logo .logo-default{
+    margin: 0px;
+}
+.sticky-header-active #header.header-narrow .header-logo .logo-small{
+    margin: 0px;
+}
+/*.diamonds .content img{*/
+    /*max-width: 440px !important;*/
+    /*margin-left: -70px !important;*/
+/*}*/

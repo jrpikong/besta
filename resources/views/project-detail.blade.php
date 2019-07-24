@@ -87,7 +87,7 @@
                                 </li>
                                 <li>
                                     <label>Client:</label>
-                                    <p>{{$project->client_name}}</p>
+                                    <p>{{$project->clinet_name}}</p>
                                 </li>
                             </ul>
 

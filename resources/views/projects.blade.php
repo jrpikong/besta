@@ -11,6 +11,7 @@
         </div>
     </section>
 
+
     <div class="container">
 
         <div class="row pt-2">
@@ -33,14 +34,14 @@
 
                                 <div class="col-md-6 col-lg-4 isotope-item mb-4 {{$project->service->slug}}">
                                     <a href="{{route('project-detail',[$project->id])}}">
-											<span class="thumb-info thumb-info-centered-info thumb-info-no-borders">
-												<span class="thumb-info-wrapper">
-													<img src="{{Voyager::image($project->cover_image)}}" class="img-fluid image-projects" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">View Project...</span>
-													</span>
-												</span>
-											</span>
+                                        <span class="thumb-info thumb-info-centered-info thumb-info-no-borders">
+                                            <span class="thumb-info-wrapper">
+                                                <img src="{{Voyager::image($project->cover_image)}}" class="img-fluid image-projects" alt="">
+                                                <span class="thumb-info-title">
+                                                    <span class="thumb-info-inner">View Project...</span>
+                                                </span>
+                                            </span>
+                                        </span>
                                     </a>
                                     <h4 class="mt-3 mb-0">{{$project->project_name}}</h4>
                                     <p class="mb-0">{{$project->location}}</p>

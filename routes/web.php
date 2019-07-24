@@ -14,9 +14,9 @@
 Route::get('/', 'HomeController@home')->name('home');
 Route::get('/company', 'CompanyController@index')->name('company');
 Route::get('/services/','ServicesController@index')->name('overview');
-Route::get('/services/{category}','ServicesController@servicesDetail')->name('sevices');
-Route::get('/projects','ProjectController@listProjects')->name('projects');
-Route::get('/projects/{id}','ProjectController@detailProject')->name('project-detail');
+Route::get('/services/{category}','ServicesController@servicesDetail')->name('services');
+Route::get('/project','ProjectController@listProjects')->name('projects');
+Route::get('/project/{id}','ProjectController@detailProject')->name('project-detail');
 Route::get('/blog','BlogController@listBlog')->name('blog');
 Route::get('/blog/{slug}','BlogController@detailBlog')->name('blog-detail');
 

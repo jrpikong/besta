@@ -8,8 +8,8 @@
 
     <title>besta.id</title>
 
-    <meta name="keywords" content="HTML5 Template" />
-    <meta name="description" content="Porto - Responsive HTML5 Template">
+    <meta name="keywords" content="Alumunium Composite Panel,Alucobond,besta rekanda,PT.besta rekanda,Spesialis Facade, Skylight dan Curtain Wall" />
+    <meta name="description" content="Besta Rekanda - Specialist Alumunium Composite Panel">
     <meta name="author" content="okler.net">
 
     <!-- Favicon -->
@@ -23,10 +23,10 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
 
     <!-- Vendor CSS -->
-    <link rel="stylesheet" href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('vendor/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.7/css/fork-awesome.min.css">
     <link rel="stylesheet" href="{{asset('vendor/animate/animate.min.css')}}">
-    <link rel="stylesheet" href="{{asset('vendor/simple-line-icons/css/simple-line-icons.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
     <link rel="stylesheet" href="{{asset('vendor/owl.carousel/assets/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/owl.carousel/assets/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/magnific-popup/magnific-popup.min.css')}}">
@@ -53,9 +53,6 @@
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
 
-    <!-- Head Libs -->
-    <script src="{{asset('vendor/modernizr/modernizr.min.js')}}"></script>
-
 </head>
 
 <body data-spy="scroll" data-target="#sidebar" data-offset="120">
@@ -76,6 +73,7 @@
 {{--Javascript Section--}}
 <!-- Vendor -->
 <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('vendor/modernizr/modernizr.min.js')}}"></script>
 <script src="{{asset('vendor/jquery.appear/jquery.appear.min.js')}}"></script>
 <script src="{{asset('vendor/jquery.easing/jquery.easing.min.js')}}"></script>
 <script src="{{asset('vendor/jquery-cookie/jquery-cookie.min.js')}}"></script>
